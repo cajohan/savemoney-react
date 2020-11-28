@@ -1,12 +1,9 @@
 import React from 'react';
-import {
-  HashRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from 'react-router-dom';
-import Layout from './components/Layout';
-
+import {HashRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
+import Money from './views/Money';
+import Statistics from './views/Statistics';
+import Label from './views/Label';
+import NoMatch from './views/NoMatch';
 
 function App() {
   return (
@@ -27,38 +24,6 @@ function App() {
         </Route>
       </Switch>
     </Router>
-  );
-}
-
-function Statistics() {
-  return (
-    <Layout>
-      <h2>统计页</h2>
-    </Layout>
-  );
-}
-
-function Label() {
-  return (
-    <Layout>
-      <h2>标签页</h2>
-    </Layout>);
-}
-
-function Money() {
-  return (
-    <Layout>
-      <h2>记账页</h2>
-    </Layout>);
-}
-
-function NoMatch() {
-  return (
-    <div>
-      <h3>
-        No match
-      </h3>
-    </div>
   );
 }
 
