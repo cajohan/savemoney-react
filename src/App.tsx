@@ -25,8 +25,8 @@ function App() {
       <Wrapper>
         <Main>
           <Switch>
-          <Route path="/tags">
-            <Tags/>
+          <Route path="/label">
+            <Label/>
           </Route>
           <Route path="/money">
             <Money/>
@@ -51,7 +51,7 @@ function Statistics() {
   return <h2>统计页</h2>;
 }
 
-function Tags() {
+function Label() {
   return <h2>标签页</h2>;
 }
 
