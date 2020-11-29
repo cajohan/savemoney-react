@@ -23,35 +23,35 @@ const Wrapper = styled.div`
     margin-top: 8px;
   }
 `;
-const LabelSection:React.FC = () => {
-  const [tags, setTags] = useState<string[]>(['衣服', '吃饭', '住宿', '出行'])
+const LabelSection: React.FC = () => {
+  const [tags, setTags] = useState<string[]>(['衣服', '吃饭', '住宿', '出行']);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const onAddTag = () =>{
+  const onAddTag = () => {
     const tagName = window.prompt('新标签的名称为');
-    if (tagName!==null){
+    if (tagName !== null) {
       setTags([...tags, tagName]);
     }
   };
-  const onToggleTag = (tag:string) => {
+  const onToggleTag = (tag: string) => {
     const index = selectedTags.indexOf(tag);
-    if (index>=0){
+    if (index >= 0) {
       //如果tag已被选中，就复制所有没有被选中的tag作为新的selectedTag
-      setSelectedTags(selectedTags.filter(t=>t!==tag));
-    }else{
-      setSelectedTags([...selectedTags,tag]);
+      setSelectedTags(selectedTags.filter(t => t !== tag));
+    } else {
+      setSelectedTags([...selectedTags, tag]);
     }
   };
-  const getClass = (tag:string) => selectedTags.indexOf(tag) >= 0 ? 'selected' : '';
+  const getClass = (tag: string) => selectedTags.indexOf(tag) >= 0 ? 'selected' : '';
   return (
     <Wrapper>
       <ol>
         {tags.map(tag =>
           <li key={tag} onClick={
-            () => {onToggleTag(tag)}
+            () => {onToggleTag(tag);}
           } className={getClass(tag)}>{tag}</li>)}
       </ol>
       <button onClick={onAddTag}>新增标签</button>
     </Wrapper>
-  )
-}
-export {LabelSection}
+  );
+};
+export {LabelSection};
