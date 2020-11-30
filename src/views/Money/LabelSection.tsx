@@ -23,9 +23,13 @@ const Wrapper = styled.div`
     margin-top: 8px;
   }
 `;
-const LabelSection: React.FC = () => {
+type Props = {
+  value: string[],
+  onChange: (selected:string[])=>void;
+}
+const LabelSection: React.FC<Props> = (props) => {
   const [tags, setTags] = useState<string[]>(['衣服', '吃饭', '住宿', '出行']);
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  const selectedTags = props.value;
   const onAddTag = () => {
     const tagName = window.prompt('新标签的名称为');
     if (tagName !== null) {
@@ -36,9 +40,9 @@ const LabelSection: React.FC = () => {
     const index = selectedTags.indexOf(tag);
     if (index >= 0) {
       //如果tag已被选中，就复制所有没有被选中的tag作为新的selectedTag
-      setSelectedTags(selectedTags.filter(t => t !== tag));
+      props.onChange(selectedTags.filter(t => t !== tag));
     } else {
-      setSelectedTags([...selectedTags, tag]);
+      props.onChange([...selectedTags, tag]);
     }
   };
   const getClass = (tag: string) => selectedTags.indexOf(tag) >= 0 ? 'selected' : '';
