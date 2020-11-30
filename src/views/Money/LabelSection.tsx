@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import React from 'react';
-import {useTags} from '../../useTags';
-import {createId} from '../../lib/createId';
+import {useTags} from 'useTags';
+import {createId} from 'lib/createId';
 
 const Wrapper = styled.div`
   background:#FFFFFF;padding: 12px 16px;

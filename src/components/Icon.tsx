@@ -1,15 +1,16 @@
 import React from 'react';
+
 let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
 try {importAll(require.context('icons', true, /\.svg$/));} catch (error) {console.log(error);}
 
 
 type Props = {
-  name: string;
+  name?: string; //方便写CSS
 }
 
-const Icon = (props:Props)=>{
+const Icon = (props: Props) => {
   return (<svg className="icon">
-    <use xlinkHref={'#'+props.name}/>
-  </svg>)
-}
+    {props.name && <use xlinkHref={'#' + props.name}/>}
+  </svg>);
+};
 export default Icon;
