@@ -4,7 +4,7 @@ import {Input} from 'components/Input';
 
 const Wrapper = styled.div`
   background: #f5f5f5;
-  padding: 0 16px;
+  padding: 14px 16px;
   font-size: 14px;
 `;
 type Props = {
@@ -18,7 +18,7 @@ const NoteSection: React.FC<Props> = (props) => {
   }; //查看onChange的类型
   return (
     <Wrapper>
-      <Input label="备注" type="text" value={note} onChange={onChange}/>
+      <Input label="备注" type="text" value={note} onChange={onChange} placeholder="请填写备注~"/>
     </Wrapper>
   );
 };
