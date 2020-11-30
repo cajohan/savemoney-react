@@ -19,7 +19,7 @@ function App() {
           <Route exact path="/label">
             <Label/>
           </Route>
-          <Route exact path="/label/:tag">
+          <Route exact path="/label/:id">
             <Tag/>
           </Route>
           <Route exact path="/money">
