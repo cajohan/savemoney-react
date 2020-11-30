@@ -52,3 +52,8 @@ button {
   display: block;
   clear: both;
 }
+.oneLine {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; //多余的省略
+}
