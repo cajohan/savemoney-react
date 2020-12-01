@@ -42,7 +42,7 @@ const Tag: React.FC = () => {
         <Space/>
         <Space/>
         <Button onClick={() => {
-          deleteTag(tag.id);
+          deleteTag(tag.id);history.goBack();
         }}>删除标签</Button>
       </Center>
     </div>
