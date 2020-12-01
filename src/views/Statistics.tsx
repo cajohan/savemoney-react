@@ -37,7 +37,7 @@ function Statistics() {
   const hash: { [K: string]: RecordItem[] } = {}; //{'2020-05-11':[item,item], '2020-05-10':[item,item]} 桶排序思路
   const seletedRecords = records.filter(r => r.category === category);
 
-  seletedRecords.map(r => {
+  seletedRecords.forEach(r => {
     const key = day(r.createdAt).format('YYYY年MM月DD日');
     if (!(key in hash)) {
       hash[key] = [];
