@@ -1,6 +1,6 @@
 import React from 'react';
 import {useTags} from 'useTags';
-import {useParams} from 'react-router-dom';
+import {useParams, useHistory} from 'react-router-dom';
 import Layout from 'components/Layout';
 import styled from 'styled-components';
 import Icon from 'components/Icon';
@@ -18,10 +18,10 @@ const Topbar = styled.header`
   align-items: center;
   line-height: 20px;
   padding: 14px;
-  background:white;
+  background: white;
 `;
 const InputWrapper = styled.div`
-  background:white;
+  background: white;
   padding: 0 16px;
   margin-top: 8px;
 `;
@@ -47,10 +47,14 @@ const Tag: React.FC = () => {
       </Center>
     </div>
   );
+  const history = useHistory();
+  const onClickBack = () => {
+    history.goBack();
+  };
   return (
     <Layout>
       <Topbar>
-        <Icon name="left"/>
+        <Icon name="left" onClick={onClickBack}/>
         <span>编辑标签</span>
         <Icon/>
       </Topbar>
