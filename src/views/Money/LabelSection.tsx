@@ -49,7 +49,7 @@ const LabelSection: React.FC<Props> = (props) => {
             () => {onToggleTag(tag.id);}
           } className={getClass(tag.id)}>{tag.name}</li>)}
       </ol>
-      <button onClick={()=>{console.log('2');addTag()}}>新增标签</button>
+      <button onClick={addTag}>新增标签</button>
     </Wrapper>
   );
 };
