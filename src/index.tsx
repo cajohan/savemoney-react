@@ -10,5 +10,6 @@ ReactDOM.render(
 );
 if (document.documentElement.clientWidth > 500) {
   window.alert('请使用手机打开本页面，以保证浏览效果');
+  console.log('fuck')
 }
 

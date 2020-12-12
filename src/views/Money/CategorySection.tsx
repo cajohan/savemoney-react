@@ -3,14 +3,17 @@ import React, {useState} from 'react';
 
 const Wrapper = styled.div`
   font-size: 24px;
+
   > ul {
     display: flex;
+
     > li {
       width: 50%;
       text-align: center;
       padding: 16px 0;
       position: relative;
-      &.selected::after{
+
+      &.selected::after {
         content: '';
         display: block;
         height: 3px;
